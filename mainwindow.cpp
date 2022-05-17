@@ -62,12 +62,12 @@ void MainWindow::on_actionSave_As_triggered()
           if(!file.open(QFile::WriteOnly | QFile::Text)) {
               QMessageBox::warning(this,"Ошибка","Файл с таким именем уже существует");
               return;
-            }
+            } else {
           QTextStream out(&file);
           out << ui->textEdit->toPlainText();
           file.flush();
           file.close();
-
+          }
 
     // comment the following call after implementing the method
     /*
